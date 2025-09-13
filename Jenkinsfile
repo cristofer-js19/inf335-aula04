@@ -17,6 +17,13 @@ pipeline {
                 sh 'mvn -B test'
             }
         }
+
+        stage('Package') {
+            steps {
+                echo 'Gerando o arquivo JAR...'
+                sh 'mvn -B package'
+            }
+        }
     }
 
     post {
